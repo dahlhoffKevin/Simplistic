@@ -16,7 +16,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.myapplication.R
 import com.example.myapplication.screens.HomeActivity
-//import com.example.simplisitic.databaseConnection.MySQL
+import com.example.myapplication.mysql.MySQL
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
         val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
 
-        // loads data typed in by the user
+        // loads data which was typed in by the user
         loadData()
 
         val btnLogin = findViewById<Button>(R.id.btnLogin)
@@ -119,7 +119,6 @@ class LoginActivity : AppCompatActivity() {
                     // GlobalScope (Async Task) for connecting to SQL-Database
                     try {
                         makeToast("Versuche Verbindung zum Server aufzubauen ...")
-                        /**
                         GlobalScope.launch {
                             Looper.prepare()
                             // checks if a database connection can be established
@@ -133,7 +132,6 @@ class LoginActivity : AppCompatActivity() {
                             }
                             Looper.loop()
                         }
-                        */
                     } catch (e: Exception) {
                         makeToast(e.toString())
                     }
