@@ -1,4 +1,4 @@
-package com.example.simplisitic
+package com.example.myapplication
 
 import android.content.Context
 import android.content.Intent
@@ -14,7 +14,6 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.example.myapplication.R
 import com.example.myapplication.screens.HomeActivity
 import com.example.myapplication.mysql.MySQL
 import kotlinx.coroutines.DelicateCoroutinesApi
