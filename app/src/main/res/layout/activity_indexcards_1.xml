@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="@color/cardview_shadow_end_color"
     android:padding="16dp"
     android:weightSum="1"
     android:baselineAligned="false">
@@ -14,25 +14,27 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <TextView
             android:id="@+id/tvId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Id"/>
-
+            tools:text="Id"
+            />
         <TextView
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Name"/>
-
+            tools:text="Name"
+            />
         <TextView
             android:id="@+id/tvEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Email"/>
+            tools:text="Email"
+            />
     </LinearLayout>
 
     <Button
@@ -41,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:text="@string/delete"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false"
+        />
 
 </LinearLayout>
