@@ -94,9 +94,12 @@ class IndexCardsActivity : AppCompatActivity() {
         val name = edName.text.toString()
         val email = edEmail.text.toString()
 
+        val notchanged = "Inhalt nicht aktualisiert!"
+        val updatefail = "Aktualisieren fehlgeschlagen!"
+
         // Check record, not change
         if(name == std?.name && email == std?.email){
-            Toast.makeText(this, "Record not changed...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, notchanged, Toast.LENGTH_SHORT).show()
             return
         }
         if(std == null) return
@@ -107,21 +110,23 @@ class IndexCardsActivity : AppCompatActivity() {
             clearEditText()
             getStudents()
         } else{
-            Toast.makeText(this, "Update failed...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, updatefail, Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun deleteStudent(id: Int){
         val builder = AlertDialog.Builder(this)
-        builder.setMessage("Are you sure you want to delete item?")
+        val deleteitem = "Möchtest du die Karteikarte wirklich löschen?"
+
+        builder.setMessage(deleteitem)
         builder.setCancelable(true)
 
-        builder.setPositiveButton("Yes"){ dialog, _ ->
+        builder.setPositiveButton("Ja"){ dialog, _ ->
             sqLiteHelper.deleteStudentById(id)
             getStudents()
             dialog.dismiss()
         }
-        builder.setNegativeButton("No") { dialog, _ ->
+        builder.setNegativeButton("Nein") { dialog, _ ->
             dialog.dismiss()
         }
         val alert = builder.create()
