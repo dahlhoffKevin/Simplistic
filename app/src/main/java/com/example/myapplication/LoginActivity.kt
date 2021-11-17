@@ -92,17 +92,26 @@ class LoginActivity : AppCompatActivity() {
         var argsFilled = false
         var connectedToInternet = true
 
+        val intent = Intent(this, HomeActivity::class.java)
+
+        val toast0 = "Du bist nicht mit dem Internet verbunden"
+        val toast1 = "Versuche Verbindung zum Server aufzubauen ..."
+        val toast2 = "Mit Server verbunden"
+        val toast3 = "Konnte keine Verbindung zum Server herstellen"
+        val toast4 = "Alle wichtigen Felder müssen ausgefüllt sein"
+
+
         // GlobalScope (Async Task) for checking internet connection
         GlobalScope.launch {
             Looper.prepare()
             if (! isOnline(this@LoginActivity)) {
-                makeToast("Du bist nicht mit dem Internet verbunden")
+                makeToast(toast0)
                 connectedToInternet = false
             }
             Looper.loop()
         }
 
-        val intent = Intent(this, HomeActivity::class.java)
+
         try {
             // if the phone is connected to internet then ...
             if (connectedToInternet) {
@@ -119,17 +128,17 @@ class LoginActivity : AppCompatActivity() {
                 if (argsFilled) {
                     // GlobalScope (Async Task) for connecting to SQL-Database
                     try {
-                        makeToast("Versuche Verbindung zum Server aufzubauen ...")
+                        makeToast(toast1)
                         GlobalScope.launch {
                             Looper.prepare()
                             // checks if a database connection can be established
 
                             if (MySQL.connection(ip, database, user, password)) {
-                                makeToast("Mit Server verbunden")
+                                makeToast(toast2)
                                 saveData()
                                 startActivity(intent)
                             } else {
-                                makeToast("Konnte keine Verbindung zum Server herstellen")
+                                makeToast(toast3)
                             }
                             Looper.loop()
                         }
@@ -137,7 +146,7 @@ class LoginActivity : AppCompatActivity() {
                         makeToast(e.toString())
                     }
                 } else {
-                    makeToast("Alle wichtigen Felder müssen ausgefüllt sein")
+                    makeToast(toast4)
                 }
             }
         } catch (e: Exception) {
@@ -148,17 +157,20 @@ class LoginActivity : AppCompatActivity() {
     // checking internet connection
     @RequiresApi(Build.VERSION_CODES.M)
     fun isOnline(context: Context): Boolean {
-        val connectivityManager =
-            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val capabilities =
-            connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val capabilities        = connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+
         if (capabilities != null) {
-            if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
-                return true
-            } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
-                return true
-            } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
-                return true
+            when {
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> {
+                    return true
+                }
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> {
+                    return true
+                }
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> {
+                    return true
+                }
             }
         }
         return false
