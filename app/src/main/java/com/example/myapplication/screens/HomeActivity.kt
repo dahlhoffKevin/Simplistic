@@ -1,10 +1,11 @@
 package com.example.myapplication.screens
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
+
 
 class HomeActivity : AppCompatActivity() {
 
@@ -19,8 +20,9 @@ class HomeActivity : AppCompatActivity() {
         val btnHomeworksActivity = findViewById<Button>(R.id.btn_homeworks)
 
         btnIndexCardsActivity.setOnClickListener {
-            Toast.makeText(this, toastindexcards , Toast.LENGTH_LONG).show()
 
+            val intent = Intent(this, IndexCardsActivity::class.java)
+            startActivity(intent)
         }
     }
 }
