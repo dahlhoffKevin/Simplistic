@@ -133,8 +133,7 @@ class LoginActivity : AppCompatActivity() {
 
                             if (MySQL.connection(ip, database, user, password)) {
                                 makeToast(toast2)
-                                saveData()
-                                startActivity(intent)
+
                             } else {
                                 makeToast(toast3)
                             }
@@ -147,6 +146,8 @@ class LoginActivity : AppCompatActivity() {
                     makeToast(toast4)
                 }
             }
+            saveData()
+            startActivity(intent)
         } catch (e: Exception) {
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show()
         }

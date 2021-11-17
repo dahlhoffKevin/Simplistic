@@ -25,8 +25,8 @@ import java.util.*
 
 
 class IndexCards : AppCompatActivity() {
-    private lateinit var edName: EditText
-    private lateinit var edEmail: EditText
+    private lateinit var edTopic: EditText
+    private lateinit var edContnet: EditText
     private lateinit var btnAdd: Button
     private lateinit var btwView: Button
     private lateinit var btnUpdate: Button
@@ -41,18 +41,22 @@ class IndexCards : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_indexcards_0)
 
+        val btnEventsActivity = findViewById<Button>(R.id.btn_events)
+        val btnHomeworksActivity = findViewById<Button>(R.id.btn_homeworks)
+
+        sqLiteHelper = SQLiteHelper(this)
+
         initView()
         initRecyclerVew()
-        sqLiteHelper = SQLiteHelper(this)
 
         btnAdd.setOnClickListener{ addStudent() }
         btwView.setOnClickListener{ getStudents() }
         btnUpdate.setOnClickListener{ updateStudent() }
 
         adapter?.setOnClickitem {
-            Toast.makeText(this, it.name, Toast.LENGTH_SHORT).show()
-            edName.setText(it.name)
-            edEmail.setText(it.email)
+            Toast.makeText(this, it.topic, Toast.LENGTH_SHORT).show()
+            edTopic.setText(it.topic)
+            edContnet.setText(it.email)
             std = it
         }
         adapter?.setOnClickDeleteItem {
@@ -67,13 +71,13 @@ class IndexCards : AppCompatActivity() {
     }
 
     private fun addStudent(){
-        val name = edName.text.toString()
-        val email = edEmail.text.toString()
+        val name = edTopic.text.toString()
+        val email = edContnet.text.toString()
 
         if(name.isEmpty() || email.isEmpty()) {
             Toast.makeText(this, "Please enter the required data", Toast.LENGTH_SHORT).show()
         } else {
-            val std = StudentModel(name = name, email = email)
+            val std = StudentModel(topic = name, email = email)
             val status = sqLiteHelper.insertStudent(std)
             // Check insert success or not success
             if(status > -1) {
@@ -87,16 +91,16 @@ class IndexCards : AppCompatActivity() {
     }
 
     private fun updateStudent(){
-        val name = edName.text.toString()
-        val email = edEmail.text.toString()
+        val name = edTopic.text.toString()
+        val email = edContnet.text.toString()
 
         // Check record, not change
-        if(name == std?.name && email == std?.email){
+        if(name == std?.topic && email == std?.email){
             Toast.makeText(this, "Record not changed...", Toast.LENGTH_SHORT).show()
             return
         }
         if(std == null) return
-        val std = StudentModel(id = std!!.id, name = name, email = email)
+        val std = StudentModel(id = std!!.id, topic = name, email = email)
         val status = sqLiteHelper.updateStudent(std)
 
         if(status >- 1){
@@ -125,9 +129,9 @@ class IndexCards : AppCompatActivity() {
     }
 
     private fun clearEditText() {
-        edName.setText("")
-        edEmail.setText("")
-        edName.requestFocus()
+        edTopic.setText("")
+        edContnet.setText("")
+        edTopic.requestFocus()
     }
 
     private fun initRecyclerVew(){
@@ -137,8 +141,8 @@ class IndexCards : AppCompatActivity() {
     }
 
     private fun initView() {
-        edName          = findViewById(R.id.edName)
-        edEmail         = findViewById(R.id.edEmail)
+        edTopic          = findViewById(R.id.edName)
+        edContnet         = findViewById(R.id.edEmail)
         btnAdd          = findViewById(R.id.btnAdd)
         btwView         = findViewById(R.id.btnView)
         btnUpdate       = findViewById(R.id.btnUpdate)
@@ -179,7 +183,7 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
 
         val contentValues = ContentValues()
         contentValues.put(ID, std.id)
-        contentValues.put(NAME, std.name)
+        contentValues.put(NAME, std.topic)
         contentValues.put(EMAIL, std.email)
 
         val success = db.insert(TBL_STUDENT, null, contentValues)
@@ -212,7 +216,7 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
                 name    = cursor.getString(cursor.getColumnIndex("name"))
                 email   = cursor.getString(cursor.getColumnIndex("email"))
 
-                val std = StudentModel(id = id, name = name, email = email)
+                val std = StudentModel(id = id, topic = name, email = email)
                 stdList.add(std)
             } while (cursor.moveToNext())
         }
@@ -224,7 +228,7 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put(ID, std.id)
-        contentValues.put(NAME, std.name)
+        contentValues.put(NAME, std.topic)
         contentValues.put(EMAIL, std.email)
         val success = db.update(TBL_STUDENT, contentValues, "id=" + std.id, null)
         db.close()
@@ -286,18 +290,18 @@ class StudentAdapter: RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
         private var id = view.findViewById<TextView>(R.id.tvId)
         private var name = view.findViewById<TextView>(R.id.tvName)
         private var email = view.findViewById<TextView>(R.id.tvEmail)
-        var btnDelete = view.findViewById<Button>(R.id.btnDelete)
+        var btnDelete: Button = view.findViewById<Button>(R.id.btnDelete)
 
         fun bindView(std: StudentModel) {
             id.text = std.id.toString()
-            name.text = std.name
+            name.text = std.topic
             email.text = std.email
         }
     }
 }
 
 
-data class StudentModel(var id: Int = getAutoId(), var name: String = "", var email: String = "") {
+data class StudentModel(var id: Int = getAutoId(), var topic: String = "", var email: String = "") {
 
     companion object {
         fun getAutoId():Int{
