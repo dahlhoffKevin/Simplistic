@@ -37,7 +37,6 @@ class IndexCardsActivity : AppCompatActivity() {
     private var adapter: StudentAdapter? = null
     private var std:StudentModel? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_indexcards_0)
@@ -71,18 +70,22 @@ class IndexCardsActivity : AppCompatActivity() {
         val name = edName.text.toString()
         val email = edEmail.text.toString()
 
+        val requiereddata = "Bitte erforderliche Felder ausfüllen"
+        val contentadded = "Inhalt hinzugefügt..."
+        val notsaved = "Inhalt nicht hinzugefügt..."
+
         if(name.isEmpty() || email.isEmpty()) {
-            Toast.makeText(this, "Please enter the required data", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, requiereddata, Toast.LENGTH_SHORT).show()
         } else {
             val std = StudentModel(name = name, email = email)
             val status = sqLiteHelper.insertStudent(std)
             // Check insert success or not success
             if(status > -1) {
-                Toast.makeText(this, "Student Added...", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, contentadded, Toast.LENGTH_SHORT).show()
                 clearEditText()
                 getStudents()
             } else {
-                Toast.makeText(this, "Record not saved", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, notsaved, Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -150,7 +153,6 @@ class IndexCardsActivity : AppCompatActivity() {
 
 
 class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
-
     companion object{
         private const val DATABASE_VERSION  = 1
         private const val DATABASE_NAME     = "student.db"
@@ -158,8 +160,6 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         private const val ID                = "id"
         private const val NAME              = "name"
         private const val EMAIL             = "email"
-
-
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
