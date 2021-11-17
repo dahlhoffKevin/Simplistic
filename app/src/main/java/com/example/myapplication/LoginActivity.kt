@@ -20,8 +20,6 @@ import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-// TODO: SQL Klasse einbauen und funktionsfähig machen
-
 @DelicateCoroutinesApi
 class LoginActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
