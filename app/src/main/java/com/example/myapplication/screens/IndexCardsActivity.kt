@@ -40,7 +40,7 @@ class IndexCardsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_0)
+        setContentView(R.layout.activity_indexcards_0)
 
         initView()
         initRecyclerVew()
@@ -266,7 +266,7 @@ class StudentAdapter: RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = StudentViewHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.activity_1, parent, false)
+        LayoutInflater.from(parent.context).inflate(R.layout.activity_indexcards_1, parent, false)
     )
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {

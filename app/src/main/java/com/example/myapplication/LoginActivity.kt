@@ -5,7 +5,6 @@ import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
 import android.os.StrictMode
@@ -14,13 +13,13 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.example.myapplication.screens.HomeActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.mysql.MySQL
-import kotlinx.coroutines.DelicateCoroutinesApi
+import com.example.myapplication.screens.HomeActivity
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-@DelicateCoroutinesApi
+
 class LoginActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,7 +83,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     // runs when the button was clicked
-    @DelicateCoroutinesApi
     @RequiresApi(Build.VERSION_CODES.M)
     private fun login() {
         var argsFilled = false

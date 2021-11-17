@@ -28,11 +28,18 @@
             android:name=".screens.HomeActivity"
             android:exported="true">
         </activity>
-
         <activity
             android:name=".screens.IndexCardsActivity"
             android:exported="true">
-    </activity>
+        </activity>
+        <activity
+            android:name=".screens.EventsActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".screens.HomeworksActivity"
+            android:exported="true">
+        </activity>
 
     </application>
 
