@@ -24,13 +24,13 @@
             tools:text="Id"
             />
         <TextView
-            android:id="@+id/tvName"
+            android:id="@+id/tvTopic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Name"
             />
         <TextView
-            android:id="@+id/tvEmail"
+            android:id="@+id/tvContent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Email"
