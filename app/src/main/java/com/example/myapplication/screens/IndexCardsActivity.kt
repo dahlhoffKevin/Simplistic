@@ -24,7 +24,7 @@ import com.example.myapplication.R
 import java.util.*
 
 
-class MainActivity : AppCompatActivity() {
+class IndexCards : AppCompatActivity() {
     private lateinit var edName: EditText
     private lateinit var edEmail: EditText
     private lateinit var btnAdd: Button
