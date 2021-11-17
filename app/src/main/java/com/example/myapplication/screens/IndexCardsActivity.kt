@@ -284,8 +284,8 @@ class StudentAdapter: RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
 
     class StudentViewHolder(var view: View): RecyclerView.ViewHolder(view) {
         private var id = view.findViewById<TextView>(R.id.tvId)
-        private var name = view.findViewById<TextView>(R.id.tvName)
-        private var email = view.findViewById<TextView>(R.id.tvEmail)
+        private var name = view.findViewById<TextView>(R.id.tvTopic)
+        private var email = view.findViewById<TextView>(R.id.tvContent)
         var btnDelete: Button = view.findViewById(R.id.btnDelete)
 
         fun bindView(std: StudentModel) {
