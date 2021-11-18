@@ -43,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:text="@string/delete"
+        android:textColor="@color/simpl_light"
         android:textAllCaps="false"
         />
 
