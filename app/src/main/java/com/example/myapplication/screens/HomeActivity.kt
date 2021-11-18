@@ -10,7 +10,6 @@ import com.example.myapplication.R
 
 class HomeActivity : AppCompatActivity() {
 
-
     private val toastindexcards = "Wechsle zu Karteikarten..."
     private val toastevents = "Wechsle zu Terminen..."
     private val toasthomeworks = "Wechsle zu Hausaufgaben..."
@@ -25,8 +24,8 @@ class HomeActivity : AppCompatActivity() {
 
         btnIndexCardsActivity.setOnClickListener {
             Toast.makeText(this, toastindexcards, Toast.LENGTH_SHORT).show()
-            val intent0 = Intent(this, IndexCardsActivity::class.java)
-            startActivity(intent0)
+            val switchIC0 = Intent(this, IndexCardsActivity::class.java)
+            startActivity(switchIC0)
         }
         btnEventsActivity.setOnClickListener{
             Toast.makeText(this, toastevents, Toast.LENGTH_SHORT).show()
