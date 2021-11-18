@@ -10,8 +10,8 @@ class HomeworksActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homeworks)
 
-        val btnIndexCardsActivity = findViewById<Button>(R.id.btn_indexcards)
-        val btnEventsActivity = findViewById<Button>(R.id.btn_events)
+        val btnIndexCardsActivity = findViewById<Button>(R.id.btn_home_indexcards)
+        val btnEventsActivity = findViewById<Button>(R.id.btn_home_events)
 
     }
 }

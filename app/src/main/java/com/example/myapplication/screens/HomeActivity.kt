@@ -19,9 +19,9 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val btnIndexCardsActivity: Button = findViewById(R.id.btn_indexcards)
-        val btnEventsActivity: Button = findViewById(R.id.btn_events)
-        val btnHomeworksActivity: Button = findViewById(R.id.btn_homeworks)
+        val btnIndexCardsActivity: Button = findViewById(R.id.btn_home_indexcards)
+        val btnEventsActivity: Button = findViewById(R.id.btn_home_events)
+        val btnHomeworksActivity: Button = findViewById(R.id.btn_home_homeworks)
 
         btnIndexCardsActivity.setOnClickListener {
             Toast.makeText(this, toastindexcards, Toast.LENGTH_SHORT).show()

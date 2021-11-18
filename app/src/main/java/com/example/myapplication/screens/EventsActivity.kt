@@ -10,8 +10,8 @@ class EventsActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_events)
 
-        val btnIndexCardsActivity = findViewById<Button>(R.id.btn_indexcards)
-        val btnHomeworksActivity = findViewById<Button>(R.id.btn_homeworks)
+        val btnIndexCardsActivity = findViewById<Button>(R.id.btn_home_indexcards)
+        val btnHomeworksActivity = findViewById<Button>(R.id.btn_home_homeworks)
 
     }
 }
