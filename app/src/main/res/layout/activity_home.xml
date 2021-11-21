@@ -74,4 +74,16 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_about"
         app:layout_constraintVertical_bias="1.0" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="346dp"
+        android:layout_height="74dp"
+        android:text="Alle weiteren Infos zu der App oder dem Bot findest du auf unserem offiziellen Discord-Server: https://discord.gg/Yfe2ACtsSp "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_home_events"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_about" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

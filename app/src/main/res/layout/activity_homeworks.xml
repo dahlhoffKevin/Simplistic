@@ -20,7 +20,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_homeworks_home"
-        app:layout_constraintTop_toBottomOf="@+id/coming_soon"
+        app:layout_constraintTop_toBottomOf="@+id/hw_01"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
@@ -37,7 +37,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_homeworks_home"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coming_soon"
+        app:layout_constraintTop_toBottomOf="@+id/hw_01"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
@@ -55,11 +55,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_homeworks_indexcards"
         app:layout_constraintStart_toEndOf="@+id/btn_homeworks_events"
-        app:layout_constraintTop_toBottomOf="@+id/coming_soon"
+        app:layout_constraintTop_toBottomOf="@+id/hw_01"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/coming_soon"
+        android:id="@+id/hw_01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
@@ -70,6 +70,8 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.517" />
 </androidx.constraintlayout.widget.ConstraintLayout>

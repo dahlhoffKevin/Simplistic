@@ -16,6 +16,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.mysql.MySQL
 import com.example.myapplication.screens.HomeActivity
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -48,19 +49,29 @@ class LoginActivity : AppCompatActivity() {
     private fun saveData() {
         // when the checkbox is checked then save the user data
         val checkBoxSaveData = findViewById<CheckBox>(R.id.checkBoxSaveData)
+        val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
         if (checkBoxSaveData.isChecked) {
             val ip = findViewById<EditText>(R.id.editTextIpAddress).text.toString()
             val user = findViewById<EditText>(R.id.editTextUsername).text.toString()
             val password = findViewById<EditText>(R.id.editTextPassword).text.toString()
             val database = findViewById<EditText>(R.id.editTextDatabase).text.toString()
-            val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
-            val editor = sharedPreferences.edit()
 
             editor.apply {
                 putString("STRING_KEY_IP", ip)
                 putString("STRING_KEY_USER", user)
                 putString("STRING_KEY_PASSWORD", password)
                 putString("STRING_KEY_DATABASE", database)
+                putBoolean("BOOLEAN_KEY_CHECK_BOX", checkBoxSaveData.isChecked)
+            }.apply()
+
+        } else {
+            editor.apply {
+                putString("STRING_KEY_IP", "")
+                putString("STRING_KEY_USER", "")
+                putString("STRING_KEY_PASSWORD", "")
+                putString("STRING_KEY_DATABASE", "")
                 putBoolean("BOOLEAN_KEY_CHECK_BOX", checkBoxSaveData.isChecked)
             }.apply()
         }
@@ -83,6 +94,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     // runs when the button was clicked
+    @DelicateCoroutinesApi
     @RequiresApi(Build.VERSION_CODES.M)
     private fun login() {
         var argsFilled = false
@@ -95,7 +107,6 @@ class LoginActivity : AppCompatActivity() {
         val toast2 = "Mit Server verbunden"
         val toast3 = "Konnte keine Verbindung zum Server herstellen"
         val toast4 = "Alle wichtigen Felder müssen ausgefüllt sein"
-
 
         // GlobalScope (Async Task) for checking internet connection
         GlobalScope.launch {
