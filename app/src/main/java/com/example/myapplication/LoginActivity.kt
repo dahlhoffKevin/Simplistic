@@ -142,6 +142,7 @@ class LoginActivity : AppCompatActivity() {
 
                             if (MySQL.connection(ip, database, user, password)) {
                                 makeToast(toast2)
+                                MySQL.fetchHomeworkTable("SELECT ha,datum FROM hausaufgaben LIMIT 5")
 
                             } else {
                                 makeToast(toast3)
