@@ -3,7 +3,7 @@ import java.sql.DriverManager
 import java.sql.Connection
 import java.sql.SQLException
 
-data class Homeworks(val h_id: Int, val task: String, val task_date: String)
+data class Homeworks(val task: String, val task_date: String)
 
 object MySQL {
 
@@ -31,10 +31,9 @@ object MySQL {
         val result = query.executeQuery()
         try {
             while (result.next()) {
-                val id = result.getInt("ha_id")
                 val ha = result.getString("ha")
                 val date = result.getString("datum")
-                has.add(Homeworks(id, ha, date))
+                has.add(Homeworks(ha, date))
             }
         } catch(e: Exception) {
             e.printStackTrace()
@@ -79,8 +78,8 @@ object MySQL {
         return stringBuilder.toString().replace(Regex("""[(,)]"""), "")
             .replace("[","")
             .replace("]","")
-            .replace("h_id=", "")
             .replace("task=", "")
             .replace("task_date=", "")
+            .replace("Homeworks", "")
     }
 }

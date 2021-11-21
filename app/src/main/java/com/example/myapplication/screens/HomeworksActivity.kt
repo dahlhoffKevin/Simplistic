@@ -34,11 +34,7 @@ class HomeworksActivity : AppCompatActivity(){
             startActivity(switchIC2)
         }
 
-        val mysql = MySQL.fetchHomeworkTable("SELECT * FROM hausaufgaben")
-
-        println("*********************************************************************************")
-        println(prettyPrint())
-        println("*********************************************************************************")
+        MySQL.fetchHomeworkTable("SELECT ha,datum FROM hausaufgaben LIMIT 5")
 
         val hwTextView = findViewById<TextView>(R.id.hw_01)
         hwTextView.text = prettyPrint()
