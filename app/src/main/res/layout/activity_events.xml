@@ -7,28 +7,11 @@
     tools:layout_editor_absoluteX="-22dp"
     tools:layout_editor_absoluteY="0dp">
 
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="40dp"
-        android:selectedDateVerticalBar="@color/simpl_red"
-        android:selectedWeekBackgroundColor="@color/simpl_dred"
-        android:showWeekNumber="true"
-        android:verticalScrollbarPosition="defaultPosition"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/btn_events_home"
         android:layout_width="70dp"
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="40dp"
         app:icon="@mipmap/ic_launcher_foreground"
@@ -37,16 +20,13 @@
         app:iconTint="@color/simpl_dred"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_events_indexcards"
-        app:layout_constraintStart_toEndOf="@+id/btn_events_homeworks"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/btn_events_homeworks" />
 
     <Button
         android:id="@+id/btn_events_indexcards"
         android:layout_width="70dp"
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="40dp"
         app:icon="@android:drawable/ic_menu_sort_by_size"
@@ -55,16 +35,13 @@
         app:iconTint="@color/simpl_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_events_home"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:layout_constraintVertical_bias="1" />
+        app:layout_constraintStart_toEndOf="@+id/btn_events_home" />
 
     <Button
         android:id="@+id/btn_events_homeworks"
         android:layout_width="70dp"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="40dp"
         app:icon="@android:drawable/ic_menu_edit"
@@ -73,7 +50,19 @@
         app:iconTint="@color/simpl_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_events_home"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/ev_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aktuelle Klausuren/Tests"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_events_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:layout_constraintVertical_bias="1" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

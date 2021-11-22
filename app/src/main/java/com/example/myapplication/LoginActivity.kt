@@ -102,8 +102,7 @@ class LoginActivity : AppCompatActivity() {
 
         val intent = Intent(this, HomeActivity::class.java)
 
-        val toast0 = "Du bist nicht mit dem Internet verbunden"
-        val toast1 = "Versuche Verbindung zum Server aufzubauen ..."
+        val toast1 = "Du bist nicht mit dem Internet verbunden"
         val toast2 = "Mit Server verbunden"
         val toast3 = "Konnte keine Verbindung zum Server herstellen"
         val toast4 = "Alle wichtigen Felder müssen ausgefüllt sein"
@@ -112,12 +111,11 @@ class LoginActivity : AppCompatActivity() {
         GlobalScope.launch {
             Looper.prepare()
             if (! isOnline(this@LoginActivity)) {
-                makeToast(toast0)
+                makeToast(toast1)
                 connectedToInternet = false
             }
             Looper.loop()
         }
-
 
         try {
             // if the phone is connected to internet then ...
@@ -135,15 +133,14 @@ class LoginActivity : AppCompatActivity() {
                 if (argsFilled) {
                     // GlobalScope (Async Task) for connecting to SQL-Database
                     try {
-                        makeToast(toast1)
                         GlobalScope.launch {
                             Looper.prepare()
                             // checks if a database connection can be established
-
                             if (MySQL.connection(ip, database, user, password)) {
+                                MySQL.fetchHomeworkTable()
+                                MySQL.fetchEventsTable()
+                                startActivity(intent)
                                 makeToast(toast2)
-                                MySQL.fetchHomeworkTable("SELECT ha,datum FROM hausaufgaben LIMIT 5")
-
                             } else {
                                 makeToast(toast3)
                             }
@@ -156,8 +153,10 @@ class LoginActivity : AppCompatActivity() {
                     makeToast(toast4)
                 }
             }
+            /**
+             * TODO: Wenn keine Internetverbindung vorhanden ist, sollen bestehende Information aus der Datenbank geladen werden
+             */
             saveData()
-            startActivity(intent)
         } catch (e: Exception) {
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show()
         }

@@ -7,8 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
-import com.example.myapplication.mysql.MySQL
-import com.example.myapplication.mysql.MySQL.prettyPrint
+import com.example.myapplication.mysql.MySQL.homeworksPrettyPrint
 
 class HomeworksActivity : AppCompatActivity(){
 
@@ -35,7 +34,7 @@ class HomeworksActivity : AppCompatActivity(){
         }
 
         val hwTextView = findViewById<TextView>(R.id.hw_01)
-        hwTextView.text = prettyPrint()
+        hwTextView.text = homeworksPrettyPrint()
 
     }
 }

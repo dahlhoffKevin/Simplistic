@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Switch
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
+import com.example.myapplication.mysql.MySQL
 
 class EventsActivity : AppCompatActivity(){
 
@@ -30,5 +32,8 @@ class EventsActivity : AppCompatActivity(){
             val switchHW1 = Intent(this, HomeworksActivity::class.java)
             startActivity(switchHW1)
         }
+
+        val evTextView = findViewById<TextView>(R.id.ev_01)
+        evTextView.text = MySQL.eventsPrettyPrint()
     }
 }
