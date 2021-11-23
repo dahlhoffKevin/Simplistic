@@ -106,11 +106,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
         android:layout_marginEnd="150dp"
-        android:layout_marginBottom="280dp"
         android:fontFamily="monospace"
         android:text="@string/neuigkeiten"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_title_patchnotes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_news" />
