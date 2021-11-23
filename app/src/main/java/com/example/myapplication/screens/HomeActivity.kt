@@ -3,9 +3,11 @@ package com.example.myapplication.screens
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
+import com.example.myapplication.mysql.MySQL
 
 
 class HomeActivity : AppCompatActivity() {
@@ -30,5 +32,12 @@ class HomeActivity : AppCompatActivity() {
             val intent2 = Intent(this, HomeworksActivity::class.java)
             startActivity(intent2)
         }
+        //tv_news_contnet
+        val evTextView = findViewById<TextView>(R.id.tv_news_contnet)
+        evTextView.text = MySQL.newsPrettyPrint()
+
+        println("*********************************************************************************")
+        println(MySQL.newsPrettyPrint())
+        println("*********************************************************************************")
     }
 }

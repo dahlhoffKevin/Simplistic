@@ -139,6 +139,7 @@ class LoginActivity : AppCompatActivity() {
                             if (MySQL.connection(ip, database, user, password)) {
                                 MySQL.fetchHomeworkTable()
                                 MySQL.fetchEventsTable()
+                                MySQL.fetchNewsTable()
                                 startActivity(intent)
                                 makeToast(toast2)
                             } else {
