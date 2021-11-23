@@ -52,23 +52,7 @@
         app:layout_constraintStart_toEndOf="@+id/btn_home_homeworks" />
 
     <TextView
-        android:id="@+id/about_app"
-        android:layout_width="360dp"
-        android:layout_height="350dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="monospace"
-        android:text="@string/about_app"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/title_patchnotes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_about_app" />
-
-    <TextView
-        android:id="@+id/title_patchnotes"
+        android:id="@+id/tv_title_patchnotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="155dp"
@@ -82,38 +66,53 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_home_events"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_app" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/patchnotes"
+        android:id="@+id/tv_patchnotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
         android:layout_marginEnd="150dp"
+        android:fontFamily="monospace"
+        android:text="@string/patchnotes"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_home_events"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_patchnotes"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_patchnotes"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/title_about_app"
+        android:id="@+id/tv_title_news"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="150dp"
         android:fontFamily="monospace"
-        android:text="@string/about_app_title_content"
-        android:textAlignment="center"
-        android:textAllCaps="false"
+        android:text="@string/neuigkeiten"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/about_app"
+        app:layout_constraintBottom_toTopOf="@+id/tv_news_contnet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_news_contnet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="280dp"
+        android:fontFamily="monospace"
+        android:text="@string/neuigkeiten"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_title_patchnotes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_news" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

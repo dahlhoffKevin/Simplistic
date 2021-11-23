@@ -30,6 +30,8 @@
     <string name="indexcards_title">Simplistic - Karteikarten</string>
     <string name="delete">Löschen</string>
     <string name="update">Aktualisieren</string>
+    <string name="neuigkeiten">Neuigkeiten</string>
+    <string name="neuigkeiten">Neuigkeiten</string>
     /** Index cards screen */
 
 </resources>
