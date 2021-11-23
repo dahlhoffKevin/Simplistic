@@ -141,7 +141,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_title_known_bugs" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/tv_discord_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="105dp"
@@ -151,11 +151,28 @@
         android:linksClickable="true"
         android:text="https://discord.gg/bmkHdC8QRd"
         android:textColorHighlight="@color/clear"
-        android:textColorLink="@color/simpl_dred"
+        android:textColorLink="@color/simpl_red"
         app:layout_constraintBottom_toTopOf="@+id/btn_home_events"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_known_bugs"
         app:layout_constraintVertical_bias="0.897" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="monospace"
+        android:text="Unser Discord:"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_discord_link"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_known_bugs" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
