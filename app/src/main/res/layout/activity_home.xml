@@ -56,15 +56,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="150dp"
         android:fontFamily="monospace"
         android:text="@string/patchnotes"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_patchnotes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="239dp" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_news_contnet" />
 
     <TextView
         android:id="@+id/tv_patchnotes"
@@ -77,21 +79,23 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="263dp" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_patchnotes" />
 
     <TextView
         android:id="@+id/tv_title_news"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="150dp"
         android:fontFamily="monospace"
         android:text="@string/neuigkeiten"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_news_contnet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="112dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_news_contnet"
@@ -104,13 +108,14 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="136dp" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_news" />
 
     <TextView
         android:id="@+id/tv_title_known_bugs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="150dp"
         android:fontFamily="monospace"
         android:text="@string/bekannte_bugs"
@@ -118,7 +123,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="362dp" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_patchnotes" />
 
     <TextView
         android:id="@+id/tv_known_bugs"
@@ -131,6 +136,6 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="386dp" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_known_bugs" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
