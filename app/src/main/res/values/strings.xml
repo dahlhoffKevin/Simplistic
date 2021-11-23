@@ -11,9 +11,25 @@
     /** Login screen */
 
     /** Home screen */
-    <string name="neuigkeiten">Neuigkeiten</string>
-    <string name="patchnotes">Patchnotes</string>
+    <string name="tv_title_news">Neuigkeiten</string>
+    <string name="tv_title_patchnotes">Patchnotes</string>
+    <string name="tv_title_known_bugs">Bekannte Bugs</string>
 
+    <string name="tv_patchnotes">
+        Version: 0.21.1123
+        Veröffentlicht am: 23. November 2021
+        * Die Grundfunktionalität/Idee wurde umgesetzt.
+        * Die Seiten Anmelden, Startseite, Termine, Hausaufgaben, Karteikartensind nun verfügbar.
+    </string>
+    <string name="tv_known_bugs">
+        * Auf manchen Geräten wird der Text nicht wie erwünscht dargestellt.
+        * Auf der Karteikartenseite können die Buttons zurzeit noch nicht angezeigt werden.
+    </string>
+
+    <string name="hl_discord">https://discord.gg/bmkHdC8QRd</string>
+    <string name="our_discord">Unser Discord:</string>
+    <string name="ita_wiki">ITA-Wiki:</string>
+    <string name="hl_itawiki">https://ita-wiki.de/login</string>
     /** Home screen */
 
     /** Index cards screen */
@@ -24,10 +40,5 @@
     <string name="indexcards_title">Simplistic - Karteikarten</string>
     <string name="delete">Löschen</string>
     <string name="update">Aktualisieren</string>
-    <string name="bekannte_bugs">Bekannte Bugs</string>
-    <string name="version_0_21_1123_ver_ffentlicht_am_23_november_2021_die_grundfunktionalit_t_idee_wurde_umgesetzt_die_seiten_anmelden_startseite_termine_hausaufgaben_karteikarten_sind_nun_verf_gbar">Version: 0.21.1123 Veröffentlicht am: 23. November 2021 * Die Grundfunktionalität/Idee wurde umgesetzt. * Die Seiten Anmelden, Startseite, Termine, Hausaufgaben, Karteikartensind nun verfügbar.</string>
-    <string name="auf_manchen_ger_ten_wird_der_text_nicht_wie_erw_nscht_dargestellt">* Auf manchen Geräten wird der Text nicht wie erwünscht dargestellt.</string>
-
     /** Index cards screen */
-
 </resources>
