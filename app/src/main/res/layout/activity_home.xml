@@ -1,34 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/tv_about"
-        android:layout_width="355dp"
-        android:layout_height="454dp"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="125dp"
-        android:fontFamily="monospace"
-        android:text="@string/about_app"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_home_homeworks"
         android:layout_width="70dp"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         app:icon="@android:drawable/ic_menu_edit"
         app:iconPadding="0dp"
         app:iconSize="40dp"
@@ -36,54 +19,97 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_home_events"
         app:layout_constraintHorizontal_bias="0.28"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_about"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_home_indexcards"
         android:layout_width="70dp"
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         app:icon="@android:drawable/ic_menu_sort_by_size"
         app:iconSize="40dp"
         app:iconTint="@color/simpl_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_home_events"
-        app:layout_constraintTop_toBottomOf="@+id/tv_about"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/btn_home_events" />
 
     <Button
         android:id="@+id/btn_home_events"
         android:layout_width="70dp"
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         app:icon="@android:drawable/ic_menu_today"
         app:iconSize="40dp"
         app:iconTint="@color/simpl_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_home_indexcards"
-        app:layout_constraintStart_toEndOf="@+id/btn_home_homeworks"
-        app:layout_constraintTop_toBottomOf="@+id/tv_about"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/btn_home_homeworks" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="346dp"
-        android:layout_height="74dp"
-        android:text="Alle weiteren Infos zu der App oder dem Bot findest du auf unserem offiziellen Discord-Server: https://discord.gg/Yfe2ACtsSp "
-        android:textSize="16sp"
+        android:id="@+id/about_app"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="22dp"
+        android:text="@string/about_app"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/title_patchnotes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_about_app" />
+
+    <TextView
+        android:id="@+id/title_patchnotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginEnd="155dp"
+        android:layout_marginBottom="226dp"
+        android:text="Patchnotes"
+        android:textAlignment="center"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn_home_events"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_about" />
+        app:layout_constraintTop_toBottomOf="@+id/about_app" />
+
+    <TextView
+        android:id="@+id/patchnotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_home_events"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_patchnotes"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/title_about_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="55dp"
+        android:text="Über den Discord-Bot und die App"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/about_app"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
