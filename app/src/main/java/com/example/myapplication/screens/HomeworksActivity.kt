@@ -10,7 +10,6 @@ import com.example.myapplication.R
 import com.example.myapplication.mysql.MySQL.homeworksPrettyPrint
 
 class HomeworksActivity : AppCompatActivity(){
-
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

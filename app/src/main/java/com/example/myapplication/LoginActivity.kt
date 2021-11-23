@@ -16,7 +16,6 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.mysql.MySQL
 import com.example.myapplication.screens.HomeActivity
-import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -94,7 +93,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     // runs when the button was clicked
-    @DelicateCoroutinesApi
     @RequiresApi(Build.VERSION_CODES.M)
     private fun login() {
         var argsFilled = false
