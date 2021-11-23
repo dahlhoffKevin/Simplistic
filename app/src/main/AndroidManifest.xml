@@ -20,7 +20,6 @@
         android:fullBackupContent="@xml/backup_descriptor">
         <activity
             android:name=".LoginActivity"
-            android:label="@string/app_title_login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,22 +29,18 @@
 
         <activity
             android:name=".screens.HomeActivity"
-            android:label="@string/app_title_home"
             android:exported="true">
         </activity>
         <activity
             android:name=".screens.IndexCardsActivity"
-            android:label="@string/app_title_indexcards"
             android:exported="true">
         </activity>
         <activity
             android:name=".screens.EventsActivity"
-            android:label="@string/app_title_events"
             android:exported="true">
         </activity>
         <activity
             android:name=".screens.HomeworksActivity"
-            android:label="@string/app_title_homeworks"
             android:exported="true">
         </activity>
     </application>
