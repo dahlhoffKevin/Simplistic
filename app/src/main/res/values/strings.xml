@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">Simplistic</string>
 
-    /** Login screen */
-    <string name="ip_address">IP-Adresse</string>
-    <string name="save_input">Eingabe speichern</string>
-    <string name="username">Nutzername</string>
-    <string name="database">Datenbank</string>
-    <string name="login">Anmelden</string>
-    <string name="password">Passwort</string>
-    /** Login screen */
+    /** Login screen */ /** ed = edit(text); cb = checkbox */
+    <string name="ed_ip_address">IP-Adresse</string>
+    <string name="ed_username">Nutzername</string>
+    <string name="ed_database">Datenbank</string>
+    <string name="ed_login">Anmelden</string>
+    <string name="ed_password">Passwort</string>
+    <string name="cb_save_input">Eingabe speichern</string>
 
-    /** Home screen */
+
+    /** Home screen */ /** tv = textview */
     <string name="tv_title_news">Neuigkeiten</string>
     <string name="tv_title_patchnotes">Patchnotes</string>
     <string name="tv_title_known_bugs">Bekannte Bugs</string>
@@ -21,24 +21,25 @@
         * Die Grundfunktionalität/Idee wurde umgesetzt.
         * Die Seiten Anmelden, Startseite, Termine, Hausaufgaben, Karteikartensind nun verfügbar.
     </string>
+
     <string name="tv_known_bugs">
         * Auf manchen Geräten wird der Text nicht wie erwünscht dargestellt.
         * Auf der Karteikartenseite können die Buttons zurzeit noch nicht angezeigt werden.
     </string>
 
-    <string name="hl_discord">https://discord.gg/bmkHdC8QRd</string>
-    <string name="our_discord">Unser Discord:</string>
-    <string name="ita_wiki">ITA-Wiki:</string>
-    <string name="hl_itawiki">https://ita-wiki.de/login</string>
-    /** Home screen */
+    <string name="tv_our_discord">Unser Discord:</string>
+    <string name="tv_discord_link">https://discord.gg/bmkHdC8QRd</string>
+    <string name="tv_ita_wiki">ITA-Wiki:</string>
+    <string name="tv_itawiki_link">https://ita-wiki.de/login</string>
+
 
     /** Index cards screen */
-    <string name="add">Hinzufügen</string>
-    <string name="view">Ansehen</string>
+    <string name="btn_add">Hinzufügen</string>
+    <string name="btn_view">Ansehen</string>
     <string name="enter_email">Inhalt</string>
     <string name="enter_name">Thema</string>
     <string name="indexcards_title">Simplistic - Karteikarten</string>
-    <string name="delete">Löschen</string>
-    <string name="update">Aktualisieren</string>
-    /** Index cards screen */
+    <string name="btn_delete">Löschen</string>
+    <string name="btn_update">Aktualisieren</string>
+
 </resources>

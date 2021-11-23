@@ -46,14 +46,14 @@
             android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add"
+            android:text="@string/btn_add"
             android:textColor="@color/simpl_light"
             android:textAllCaps="false"
             tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/btnView"
-            android:text="@string/view"
+            android:text="@string/btn_view"
             android:textColor="@color/simpl_light"
             android:layout_marginStart="8dp"
             android:textAllCaps="false"
@@ -63,7 +63,7 @@
 
         <Button
             android:id="@+id/btnUpdate"
-            android:text="@string/update"
+            android:text="@string/btn_update"
             android:textColor="@color/simpl_light"
             android:layout_marginStart="8dp"
             android:textAllCaps="false"
