@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Simplistic</string>
+    <string name="app_title_login">Login</string>
+    <string name="app_title_home">Startseite</string>
+    <string name="app_title_homeworks">Hausaufgaben</string>
+    <string name="app_title_events">Termine</string>
+    <string name="app_title_indexcards">Karteikarten</string>
 
     /** Login screen */ /** ed = edit(text); cb = checkbox */
     <string name="ed_ip_address">IP-Adresse</string>
