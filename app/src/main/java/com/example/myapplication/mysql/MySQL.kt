@@ -7,7 +7,6 @@ data class Homeworks(val task: String, val task_date: String)
 data class Classtest(val test: String, val test_date: String)
 
 object MySQL {
-
     lateinit var conn: Connection
     private val has = mutableListOf<Homeworks>()
     private val clas = mutableListOf<Classtest>()
@@ -15,16 +14,12 @@ object MySQL {
     @JvmStatic
     fun connection(address: String, database: String, user: String, password: String): Boolean {
         var connected = false
-
         try {
-
             conn = DriverManager.getConnection("jdbc:mysql://$address/$database?user=$user&password=$password&useUnicode=true&characterEncoding=UTF-8")
             connected = true
-
         } catch (e: SQLException) {
             e.printStackTrace()
         }
-
         return connected
     }
 
@@ -44,17 +39,13 @@ object MySQL {
     }
 
     fun homeworksPrettyPrint(): String {
-
         var indentLevel = 0
         val indentWidth = 0
-
         fun padding() = "".padStart(indentLevel * indentWidth)
-
         val toString = has.toString()
-
         val stringBuilder = StringBuilder(toString.length)
-
         var i = 0
+
         while (i < toString.length) {
             when (val char = toString[i]) {
                 '(', '[', '{' -> {
@@ -101,17 +92,13 @@ object MySQL {
     }
 
     fun eventsPrettyPrint(): String {
-
         var indentLevel = 0
-        val indentWidth = 2
-
+        val indentWidth = 0
         fun padding() = "".padStart(indentLevel * indentWidth)
-
         val toString = clas.toString()
-
         val stringBuilder = StringBuilder(toString.length)
-
         var i = 0
+
         while (i < toString.length) {
             when (val char = toString[i]) {
                 '(', '[', '{' -> {
