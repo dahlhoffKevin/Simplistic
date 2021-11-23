@@ -24,6 +24,7 @@
     <string name="indexcards_title">Simplistic - Karteikarten</string>
     <string name="delete">Löschen</string>
     <string name="update">Aktualisieren</string>
+    <string name="bekannte_bugs">Bekannte Bugs</string>
 
     /** Index cards screen */
 
