@@ -32,9 +32,7 @@ class HomeworksActivity : AppCompatActivity(){
             val switchIC2 = Intent(this, IndexCardsActivity::class.java)
             startActivity(switchIC2)
         }
-
         val hwTextView = findViewById<TextView>(R.id.hw_01)
         hwTextView.text = homeworksPrettyPrint()
-
     }
 }

@@ -32,7 +32,6 @@ class EventsActivity : AppCompatActivity(){
             val switchHW1 = Intent(this, HomeworksActivity::class.java)
             startActivity(switchHW1)
         }
-
         val evTextView = findViewById<TextView>(R.id.ev_01)
         evTextView.text = MySQL.eventsPrettyPrint()
     }
