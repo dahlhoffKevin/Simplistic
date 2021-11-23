@@ -21,20 +21,22 @@
             android:id="@+id/tvId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Id"
-            />
+            android:fontFamily="monospace"
+            tools:text="Id" />
+
         <TextView
             android:id="@+id/tvTopic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Name"
-            />
+            android:fontFamily="monospace"
+            tools:text="Name" />
+
         <TextView
             android:id="@+id/tvContent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Email"
-            />
+            android:fontFamily="monospace"
+            tools:text="Email" />
     </LinearLayout>
 
     <Button
@@ -42,9 +44,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:fontFamily="monospace"
         android:text="@string/delete"
-        android:textColor="@color/simpl_light"
         android:textAllCaps="false"
-        />
+        android:textColor="@color/simpl_light" />
 
 </LinearLayout>
