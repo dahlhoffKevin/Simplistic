@@ -19,7 +19,8 @@
         Neben den Bot arbeitet ein anderes Team an einer App die es jemanden ermöglicht z.B. Hausaufgaben und Klassenarbeiten zu sichten.
         Diese App ist aber noch stark in bearbeitung.
     </string>
-
+    <string name="patchnotes">Patchnotes</string>
+    <string name="ber_den_discord_bot_und_die_app">Über den Discord-Bot und die App</string>
 
 
     /** Home screen */
