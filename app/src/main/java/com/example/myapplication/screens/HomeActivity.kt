@@ -35,9 +35,5 @@ class HomeActivity : AppCompatActivity() {
         //tv_news_contnet
         val evTextView = findViewById<TextView>(R.id.tv_news_contnet)
         evTextView.text = MySQL.newsPrettyPrint()
-
-        println("*********************************************************************************")
-        println(MySQL.newsPrettyPrint())
-        println("*********************************************************************************")
     }
 }

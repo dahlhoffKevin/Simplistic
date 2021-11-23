@@ -25,6 +25,8 @@
     <string name="delete">Löschen</string>
     <string name="update">Aktualisieren</string>
     <string name="bekannte_bugs">Bekannte Bugs</string>
+    <string name="version_0_21_1123_ver_ffentlicht_am_23_november_2021_die_grundfunktionalit_t_idee_wurde_umgesetzt_die_seiten_anmelden_startseite_termine_hausaufgaben_karteikarten_sind_nun_verf_gbar">Version: 0.21.1123 Veröffentlicht am: 23. November 2021 * Die Grundfunktionalität/Idee wurde umgesetzt. * Die Seiten Anmelden, Startseite, Termine, Hausaufgaben, Karteikartensind nun verfügbar.</string>
+    <string name="auf_manchen_ger_ten_wird_der_text_nicht_wie_erw_nscht_dargestellt">* Auf manchen Geräten wird der Text nicht wie erwünscht dargestellt.</string>
 
     /** Index cards screen */
 

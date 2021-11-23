@@ -70,12 +70,13 @@
 
     <TextView
         android:id="@+id/tv_patchnotes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="311dp"
+        android:layout_height="202dp"
         android:layout_marginStart="150dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="150dp"
         android:fontFamily="monospace"
-        android:text="@string/patchnotes"
+        android:text="@string/version_0_21_1123_ver_ffentlicht_am_23_november_2021_die_grundfunktionalit_t_idee_wurde_umgesetzt_die_seiten_anmelden_startseite_termine_hausaufgaben_karteikarten_sind_nun_verf_gbar"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -128,14 +129,15 @@
 
     <TextView
         android:id="@+id/tv_known_bugs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="310dp"
+        android:layout_height="77dp"
         android:layout_marginStart="150dp"
         android:layout_marginEnd="150dp"
         android:fontFamily="monospace"
-        android:text="@string/bekannte_bugs"
+        android:text="@string/auf_manchen_ger_ten_wird_der_text_nicht_wie_erw_nscht_dargestellt"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_known_bugs" />
 
