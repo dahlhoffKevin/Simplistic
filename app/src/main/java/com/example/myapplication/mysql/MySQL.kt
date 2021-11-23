@@ -5,11 +5,13 @@ import java.sql.SQLException
 
 data class Homeworks(val task: String, val task_date: String)
 data class Classtest(val test: String, val test_date: String)
+data class News(val news: String, val news_date: String)
 
 object MySQL {
     lateinit var conn: Connection
     private val has = mutableListOf<Homeworks>()
     private val clas = mutableListOf<Classtest>()
+    private val news = mutableListOf<News>()
 
     @JvmStatic
     fun connection(address: String, database: String, user: String, password: String): Boolean {
@@ -127,6 +129,59 @@ object MySQL {
             .replace("test=", "Klausur/Test: ")
             .replace("test_date=", "Datum: ")
             .replace("Classtest", "")
+    }
+
+    fun fetchNewsTable(): MutableList<News> {
+        val query = conn.prepareStatement("SELECT news,news_date FROM news LIMIT 1")
+        val result = query.executeQuery()
+        try {
+            while (result.next()) {
+                val test = result.getString("news")
+                val testDate = result.getString("news_date")
+                news.add(News(test, testDate))
+            }
+        } catch(e: Exception) {
+            e.printStackTrace()
+        }
+        return news
+    }
+
+    fun newsPrettyPrint(): String {
+        var indentLevel = 0
+        val indentWidth = 0
+        fun padding() = "".padStart(indentLevel * indentWidth)
+        val toString = news.toString()
+        val stringBuilder = StringBuilder(toString.length)
+        var i = 0
+
+        while (i < toString.length) {
+            when (val char = toString[i]) {
+                '(', '[', '{' -> {
+                    indentLevel++
+                    stringBuilder.appendLine(char).append(padding())
+                }
+                ')', ']', '}' -> {
+                    indentLevel--
+                    stringBuilder.appendLine().append(padding()).append(char)
+                }
+                ',' -> {
+                    stringBuilder.appendLine(char).append(padding())
+                    // ignore space after comma as we have added a newline
+                    val nextChar = toString.getOrElse(i + 1) { char }
+                    if (nextChar == ' ') i++
+                }
+                else -> {
+                    stringBuilder.append(char)
+                }
+            }
+            i++
+        }
+        return stringBuilder.toString().replace(Regex("""[(,)]"""), "")
+            .replace("[","")
+            .replace("]","")
+            .replace("news=", "")
+            .replace("news_date=", "Datum: ")
+            .replace("News", "")
     }
 
 }
