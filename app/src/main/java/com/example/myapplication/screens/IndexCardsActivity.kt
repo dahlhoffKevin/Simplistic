@@ -26,8 +26,8 @@ import kotlin.collections.ArrayList
 
 
 class IndexCardsActivity : AppCompatActivity() {
-    private lateinit var edName: EditText
-    private lateinit var edEmail: EditText
+    private lateinit var edTopic: EditText
+    private lateinit var edContent: EditText
     private lateinit var btnAdd: Button
     private lateinit var btwView: Button
     private lateinit var btnUpdate: Button
@@ -51,8 +51,8 @@ class IndexCardsActivity : AppCompatActivity() {
 
         adapter?.setOnClickitem {
             Toast.makeText(this, it.name, Toast.LENGTH_SHORT).show()
-            edName.setText(it.name)
-            edEmail.setText(it.email)
+            edTopic.setText(it.name)
+            edContent.setText(it.email)
             std = it
         }
         adapter?.setOnClickDeleteItem {
@@ -67,8 +67,8 @@ class IndexCardsActivity : AppCompatActivity() {
     }
 
     private fun addStudent(){
-        val name = edName.text.toString()
-        val email = edEmail.text.toString()
+        val name = edTopic.text.toString()
+        val email = edContent.text.toString()
 
         val requiereddata = "Bitte erforderliche Felder ausfüllen"
         val contentadded = "Inhalt hinzugefügt..."
@@ -91,8 +91,8 @@ class IndexCardsActivity : AppCompatActivity() {
     }
 
     private fun updateStudent(){
-        val name = edName.text.toString()
-        val email = edEmail.text.toString()
+        val name = edTopic.text.toString()
+        val email = edContent.text.toString()
 
         val notchanged = "Inhalt nicht aktualisiert!"
         val updatefail = "Aktualisieren fehlgeschlagen!"
@@ -134,9 +134,9 @@ class IndexCardsActivity : AppCompatActivity() {
     }
 
     private fun clearEditText() {
-        edName.setText("")
-        edEmail.setText("")
-        edName.requestFocus()
+        edTopic.setText("")
+        edContent.setText("")
+        edTopic.requestFocus()
     }
 
     private fun initRecyclerVew(){
@@ -146,8 +146,8 @@ class IndexCardsActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        edName          = findViewById(R.id.edName)
-        edEmail         = findViewById(R.id.edEmail)
+        edTopic          = findViewById(R.id.edName)
+        edContent         = findViewById(R.id.edEmail)
         btnAdd          = findViewById(R.id.btnAdd)
         btwView         = findViewById(R.id.btnView)
         btnUpdate       = findViewById(R.id.btnUpdate)
