@@ -1,4 +1,5 @@
 <resources>
+    /** App titles */
     <string name="app_name">Simplistic</string>
     <string name="app_title_login">Login</string>
     <string name="app_title_home">Startseite</string>
@@ -6,7 +7,8 @@
     <string name="app_title_events">Termine</string>
     <string name="app_title_indexcards">Karteikarten</string>
 
-    /** Login screen */ /** ed = edit(text); cb = checkbox */
+
+    /** Login screen */                                                                             /** ed = edit(text); cb = checkbox */
     <string name="ed_ip_address">IP-Adresse</string>
     <string name="ed_username">Nutzername</string>
     <string name="ed_database">Datenbank</string>
@@ -15,11 +17,10 @@
     <string name="cb_save_input">Eingabe speichern</string>
 
 
-    /** Home screen */ /** tv = textview */
+    /** Home screen */                                                                              /** tv = textview */
     <string name="tv_title_news">Neuigkeiten</string>
-    <string name="tv_title_patchnotes">Patchnotes</string>
-    <string name="tv_title_known_bugs">Bekannte Bugs</string>
 
+    <string name="tv_title_patchnotes">Patchnotes</string>
     <string name="tv_patchnotes">
         Version: 0.21.1123
         Veröffentlicht am: 23. November 2021
@@ -27,6 +28,7 @@
         * Die Seiten Anmelden, Startseite, Termine, Hausaufgaben, Karteikartensind nun verfügbar.
     </string>
 
+    <string name="tv_title_known_bugs">Bekannte Bugs</string>
     <string name="tv_known_bugs">
         * Auf manchen Geräten wird der Text nicht wie erwünscht dargestellt.
         * Auf der Karteikartenseite können die Buttons zurzeit noch nicht angezeigt werden.
@@ -41,10 +43,9 @@
     /** Index cards screen */
     <string name="btn_add">Hinzufügen</string>
     <string name="btn_view">Ansehen</string>
-    <string name="enter_email">Inhalt</string>
-    <string name="enter_name">Thema</string>
-    <string name="indexcards_title">Simplistic - Karteikarten</string>
-    <string name="btn_delete">Löschen</string>
     <string name="btn_update">Aktualisieren</string>
+    <string name="btn_delete">Löschen</string>
+    <string name="ed_content">Inhalt</string>
+    <string name="ed_topic">Thema</string>
 
 </resources>
