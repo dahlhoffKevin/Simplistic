@@ -5,6 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/simpl_red"
+        tools:ignore="MissingConstraints"></androidx.appcompat.widget.Toolbar>
+
     <Button
         android:id="@+id/btn_homeworks_indexcards"
         android:layout_width="70dp"
@@ -54,7 +61,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:fontFamily="monospace"
@@ -64,6 +70,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tb_toolbar2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="225dp"
+        android:fontFamily="monospace"
+        android:text="Hausaufgaben"
+        android:textColor="@color/simpl_light"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tb_toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/tb_toolbar2"
+        app:layout_constraintStart_toStartOf="@+id/tb_toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/tb_toolbar2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
