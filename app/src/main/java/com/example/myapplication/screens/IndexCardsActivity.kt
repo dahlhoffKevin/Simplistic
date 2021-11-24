@@ -35,7 +35,7 @@ class IndexCardsActivity : AppCompatActivity() {
     private lateinit var sqLiteHelper: SQLiteHelper
     private lateinit var recyclerView: RecyclerView
     private var adapter: StudentAdapter? = null
-    private var std:StudentModel? = null
+    private var std:ContentModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,9 +45,9 @@ class IndexCardsActivity : AppCompatActivity() {
         initRecyclerVew()
         sqLiteHelper = SQLiteHelper(this)
 
-        btnAdd.setOnClickListener{ addStudent() }
-        btwView.setOnClickListener{ getStudents() }
-        btnUpdate.setOnClickListener{ updateStudent() }
+        btnAdd.setOnClickListener{ addContent() }
+        btwView.setOnClickListener{ getContent() }
+        btnUpdate.setOnClickListener{ updateContent() }
 
         adapter?.setOnClickitem {
             Toast.makeText(this, it.name, Toast.LENGTH_SHORT).show()
@@ -56,41 +56,41 @@ class IndexCardsActivity : AppCompatActivity() {
             std = it
         }
         adapter?.setOnClickDeleteItem {
-            deleteStudent(it.id)
+            deleteContent(it.id)
         }
     }
 
-    private fun getStudents(){
-        val stdList = sqLiteHelper.getAllStudent()
+    private fun getContent(){
+        val stdList = sqLiteHelper.getAllContent()
         Log.e("Log", "${stdList.size}")
         adapter?.addItems(stdList)
     }
 
-    private fun addStudent(){
-        val name = edTopic.text.toString()
-        val email = edContent.text.toString()
+    private fun addContent(){
+        val topic = edTopic.text.toString()
+        val content = edContent.text.toString()
 
         val requiereddata = "Bitte erforderliche Felder ausfüllen"
         val contentadded = "Inhalt hinzugefügt..."
         val notsaved = "Inhalt nicht hinzugefügt..."
 
-        if(name.isEmpty() || email.isEmpty()) {
+        if(topic.isEmpty() || content.isEmpty()) {
             Toast.makeText(this, requiereddata, Toast.LENGTH_SHORT).show()
         } else {
-            val std = StudentModel(name = name, email = email)
+            val std = ContentModel(name = topic, email = content)
             val status = sqLiteHelper.insertStudent(std)
             // Check insert success or not success
             if(status > -1) {
                 Toast.makeText(this, contentadded, Toast.LENGTH_SHORT).show()
                 clearEditText()
-                getStudents()
+                getContent()
             } else {
                 Toast.makeText(this, notsaved, Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun updateStudent(){
+    private fun updateContent(){
         val name = edTopic.text.toString()
         val email = edContent.text.toString()
 
@@ -103,18 +103,18 @@ class IndexCardsActivity : AppCompatActivity() {
             return
         }
         if(std == null) return
-        val std = StudentModel(id = std!!.id, name = name, email = email)
-        val status = sqLiteHelper.updateStudent(std)
+        val std = ContentModel(id = std!!.id, name = name, email = email)
+        val status = sqLiteHelper.updateContent(std)
 
         if(status >- 1){
             clearEditText()
-            getStudents()
+            getContent()
         } else{
             Toast.makeText(this, updatefail, Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun deleteStudent(id: Int){
+    private fun deleteContent(id: Int){
         val builder = AlertDialog.Builder(this)
         val deleteitem = "Möchtest du die Karteikarte wirklich löschen?"
 
@@ -123,7 +123,7 @@ class IndexCardsActivity : AppCompatActivity() {
 
         builder.setPositiveButton("Ja"){ dialog, _ ->
             sqLiteHelper.deleteStudentById(id)
-            getStudents()
+            getContent()
             dialog.dismiss()
         }
         builder.setNegativeButton("Nein") { dialog, _ ->
@@ -146,15 +146,14 @@ class IndexCardsActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        edTopic          = findViewById(R.id.edName)
-        edContent         = findViewById(R.id.edEmail)
+        edTopic         = findViewById(R.id.edName)
+        edContent       = findViewById(R.id.edEmail)
         btnAdd          = findViewById(R.id.btnAdd)
         btwView         = findViewById(R.id.btnView)
         btnUpdate       = findViewById(R.id.btnUpdate)
         recyclerView    = findViewById(R.id.recyclerView)
     }
 }
-
 
 
 class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -171,7 +170,6 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         val createTblStudent = (
                 "CREATE TABLE " + TBL_STUDENT +
                         "(" + ID + " INTEGER PRIMARY KEY, " + NAME + " TEXT," + EMAIL + " TEXT" + ")")
-
         db?.execSQL(createTblStudent)
     }
 
@@ -180,10 +178,10 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         onCreate(db)
     }
 
-    fun insertStudent(std: StudentModel): Long{
+    fun insertStudent(std: ContentModel): Long{
         val db = this.writableDatabase
-
         val contentValues = ContentValues()
+
         contentValues.put(ID, std.id)
         contentValues.put(NAME, std.name)
         contentValues.put(EMAIL, std.email)
@@ -194,8 +192,8 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
     }
 
     @SuppressLint("Range", "Recycle")
-    fun getAllStudent(): ArrayList<StudentModel> {
-        val stdList : ArrayList<StudentModel> = ArrayList()
+    fun getAllContent(): ArrayList<ContentModel> {
+        val stdList : ArrayList<ContentModel> = ArrayList()
         val selectQuery = "SELECT * FROM $TBL_STUDENT"
         val db = this.readableDatabase
         val cursor: Cursor?
@@ -218,15 +216,14 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
                 name    = cursor.getString(cursor.getColumnIndex("name"))
                 email   = cursor.getString(cursor.getColumnIndex("email"))
 
-                val std = StudentModel(id = id, name = name, email = email)
+                val std = ContentModel(id = id, name = name, email = email)
                 stdList.add(std)
             } while (cursor.moveToNext())
         }
-
         return stdList
     }
 
-    fun updateStudent(std: StudentModel): Int{
+    fun updateContent(std: ContentModel): Int{
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put(ID, std.id)
@@ -239,8 +236,8 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
 
     fun deleteStudentById(id: Int): Int{
         val db = this.writableDatabase
-
         val contentValues = ContentValues()
+
         contentValues.put(ID, id)
 
         val success = db.delete(TBL_STUDENT, "id=$id", null)
@@ -250,22 +247,21 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
 }
 
 class StudentAdapter: RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
-    private var stdList: ArrayList<StudentModel> = ArrayList()
-    private var onClickItem:((StudentModel)->Unit)?= null
-    private var onClickDeleteItem:((StudentModel)->Unit)?= null
-
+    private var stdList: ArrayList<ContentModel> = ArrayList()
+    private var onClickItem:((ContentModel)->Unit)?= null
+    private var onClickDeleteItem:((ContentModel)->Unit)?= null
 
     @SuppressLint("NotifyDataSetChanged")
-    fun addItems(items: ArrayList<StudentModel>){
+    fun addItems(items: ArrayList<ContentModel>){
         this.stdList = items
         notifyDataSetChanged()
     }
 
-    fun setOnClickitem(callback: (StudentModel)->Unit){
+    fun setOnClickitem(callback: (ContentModel)->Unit){
         this.onClickItem = callback
     }
 
-    fun setOnClickDeleteItem(callback: (StudentModel) -> Unit){
+    fun setOnClickDeleteItem(callback: (ContentModel) -> Unit){
         this.onClickDeleteItem = callback
     }
 
@@ -284,7 +280,6 @@ class StudentAdapter: RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
 
     override fun getItemCount(): Int {
         return stdList.size
-
     }
 
     class StudentViewHolder(var view: View): RecyclerView.ViewHolder(view) {
@@ -293,7 +288,7 @@ class StudentAdapter: RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
         private var email = view.findViewById<TextView>(R.id.tvContent)
         var btnDelete: Button = view.findViewById(R.id.btnDelete)
 
-        fun bindView(std: StudentModel) {
+        fun bindView(std: ContentModel) {
             id.text = std.id.toString()
             name.text = std.name
             email.text = std.email
@@ -301,8 +296,7 @@ class StudentAdapter: RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
     }
 }
 
-data class StudentModel(var id: Int = getAutoId(), var name: String = "", var email: String = "") {
-
+data class ContentModel(var id: Int = getAutoId(), var name: String = "", var email: String = "") {
     companion object {
         fun getAutoId():Int{
             val random = Random()
