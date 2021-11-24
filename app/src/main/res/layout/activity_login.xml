@@ -12,9 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/simpl_red"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"></androidx.appcompat.widget.Toolbar>
 
     <EditText
@@ -122,8 +119,7 @@
         android:id="@+id/tv_title_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="330dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginEnd="300dp"
         android:fontFamily="monospace"
         android:text="@string/app_title_login"
         android:textAlignment="center"
@@ -131,6 +127,8 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
