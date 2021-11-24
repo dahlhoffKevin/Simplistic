@@ -2,8 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".screens.HomeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_home_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/simpl_red"
+        tools:ignore="MissingConstraints">
+    </androidx.appcompat.widget.Toolbar>
 
     <Button
         android:id="@+id/btn_home_homeworks"
@@ -55,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="150dp"
         android:fontFamily="monospace"
         android:text="@string/tv_title_patchnotes"
@@ -85,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="150dp"
         android:fontFamily="monospace"
         android:text="@string/tv_title_news"
@@ -94,7 +104,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tv_news_contnet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tb_home_toolbar" />
 
     <TextView
         android:id="@+id/tv_news_contnet"
@@ -114,7 +124,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="150dp"
         android:fontFamily="monospace"
         android:text="@string/tv_title_known_bugs"
@@ -164,7 +174,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="140dp"
         android:fontFamily="monospace"
         android:text="@string/tv_our_discord"
@@ -200,12 +210,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
+        android:layout_marginBottom="20dp"
         android:autoLink="web"
         android:clickable="false"
         android:fontFamily="monospace"
         android:text="@string/tv_itawiki_link"
         android:textColorLink="#2196F3"
         android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_home_events"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_itawiki" />
