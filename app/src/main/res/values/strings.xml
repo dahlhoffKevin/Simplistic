@@ -23,16 +23,15 @@
 
     <string name="tv_title_patchnotes">Patchnotes</string>
     <string name="tv_patchnotes">
-        Version: 0.21.1123
-        Veröffentlicht am: 23. November 2021
-        * Die Grundfunktionalität/Idee wurde umgesetzt.
-        * Die Seiten Anmelden, Startseite, Termine, Hausaufgaben, Karteikartensind nun verfügbar.
+        Version: 0.21.1124
+        Veröffentlicht am: 24. November 2021
+        * Toolbars wurden hinzugefügt, damit klarer ist, auf welcher Seite der Nutzer sich befindet.
     </string>
 
-    <string name="tv_title_known_bugs">Bekannte Bugs</string>
-    <string name="tv_known_bugs">
-        * Auf manchen Geräten wird der Text nicht wie erwünscht dargestellt.
-        * Auf der Karteikartenseite können die Buttons zurzeit noch nicht angezeigt werden.
+    <string name="tv_title_known_issues">Bekannte Probleme</string>
+    <string name="tv_known_issues">
+        * Auf diversen Geräten wird der Text nicht wie erwünscht dargestellt.
+        * Da die Karteikartenseite anders aufgebaut ist als die anderen, können dort Toolbar und Buttons noch nicht angezeigt werden.
     </string>
 
     <string name="tv_our_discord">Unser Discord:</string>
