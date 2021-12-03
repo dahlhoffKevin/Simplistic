@@ -73,8 +73,8 @@ object MySQL {
         return stringBuilder.toString().replace(Regex("""[(,)]"""), "")
             .replace("[","")
             .replace("]","")
-            .replace("task=", "Aufgabe: ")
-            .replace("task_date=", "Abgabe: ")
+            .replace("task=", "Aufgabe:\n")
+            .replace("task_date=", "\nAbgabe:\n")
             .replace("Homeworks", "")
     }
 
@@ -126,8 +126,8 @@ object MySQL {
         return stringBuilder.toString().replace(Regex("""[(,)]"""), "")
             .replace("[","")
             .replace("]","")
-            .replace("test=", "Klausur/Test: ")
-            .replace("test_date=", "Datum: ")
+            .replace("test=", "Klausur/Test:\n")
+            .replace("test_date=", "\nDatum:\n")
             .replace("Classtest", "")
     }
 

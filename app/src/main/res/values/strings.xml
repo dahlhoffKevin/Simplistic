@@ -23,15 +23,12 @@
 
     <string name="tv_title_patchnotes">Patchnotes</string>
     <string name="tv_patchnotes">
-        Version: 0.21.1124
-        Veröffentlicht am: 24. November 2021
-        * Toolbars wurden hinzugefügt, damit klarer ist, auf welcher Seite der Nutzer sich befindet.
+        Version: 0.21.1203\nVeröffentlicht am: 03. Dezember 2021\n* Die einzelnen Seiten wurden nun Scrollbar gemacht.\n\nVersion: 0.21.1124\nVeröffentlicht am: 24. November 2021\n* Toolbars wurden hinzugefügt, damit klarer ist, auf welcher Seite der Nutzer sich befindet.
     </string>
 
     <string name="tv_title_known_issues">Bekannte Probleme</string>
     <string name="tv_known_issues">
-        * Auf diversen Geräten wird der Text nicht wie erwünscht dargestellt.
-        * Da die Karteikartenseite anders aufgebaut ist als die anderen, können dort Toolbar und Buttons noch nicht angezeigt werden.
+        * Auf diversen Geräten wird der Text nicht wie erwünscht dargestellt.\n* Da die Karteikartenseite anders aufgebaut ist als die anderen, können dort Toolbar und Buttons noch nicht angezeigt werden.
     </string>
 
     <string name="tv_our_discord">Unser Discord:</string>

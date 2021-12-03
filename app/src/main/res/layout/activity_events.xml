@@ -62,22 +62,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/ev_01"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="15dp"
-        android:fontFamily="monospace"
-        android:text="Aktuelle Klausuren/Tests"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_events_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_toolbar" />
-
-    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -91,5 +75,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tb_toolbar" />
+
+    <ScrollView
+        android:layout_width="393dp"
+        android:layout_height="594dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_events_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_toolbar"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/ev_01"
+            android:layout_width="238dp"
+            android:layout_height="225dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="monospace"
+            android:text="Aktuelle Klausuren/Tests"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_events_home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.569"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tb_toolbar"
+            app:layout_constraintVertical_bias="0.067" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
