@@ -14,3 +14,7 @@ In dieser Readme werden folgenden Thema behandelt:
   - Hat sich um die Funktionsweise der Karteikarten gekümmert und war für die entwicklung der einzelnen Seiten verantwortlich. Außerdem hat er sich das aktuelle Design der App ausgedacht
 - Kevin D.
   - War für die implementierung der Datenbankfunktionen verantwortlich und sich darum gekümmert, das die richtigen Informationen auf den richtigen Seiten angezeigt werden
+
+### Aufbau der App
+  
+### Funktionsweise der App
