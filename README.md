@@ -4,5 +4,5 @@ Simplistic wurde im Rahmen der Projekttage der TBS1 entwickelt. Dieses Projekt b
 
 In dieser Readme werden folgenden Thema behandelt:
 
-> Aufbau der App
-> Funktionsweise der App
+- > Aufbau der App
+- > Funktionsweise der App
