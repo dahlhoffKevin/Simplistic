@@ -16,5 +16,7 @@ In dieser Readme werden folgenden Thema behandelt:
   - War für die implementierung der Datenbankfunktionen verantwortlich und sich darum gekümmert, das die richtigen Informationen auf den richtigen Seiten angezeigt werden
 
 ### Aufbau der App
+  Beim start der App stößt man zu nächst auf einen Login Bildschrim, hier müssen essentielle Daten wie der Datenbank Server, der Nutzername, das Passwort der Datenbank und der Name der Datenbank angebeben werden.
+ 
   
 ### Funktionsweise der App
