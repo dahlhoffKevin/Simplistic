@@ -17,6 +17,8 @@ In dieser Readme werden folgenden Thema behandelt:
 
 ### Aufbau der App
   Beim start der App stößt man zu nächst auf einen Login Bildschrim, hier müssen essentielle Daten wie der Datenbank Server, der Nutzername, das Passwort der Datenbank und der Name der Datenbank angebeben werden.
+  
   Sobald sich erfolgreich angemeldet wurde, findet man auf dem Startbildschirm generelle Informationen zu der App. Zu diesen Informationen zählen, beispielsweise, die Version der App, ein Changelog und wichtige Links.
+  
   Im Unteren bereich der Ap lassen sich drei Buttons finden. Der linke Button führt den Benutzer zu den aktuellen Hausaufgaben, die Mitte zeigt alle aktuell anstehenden Klausuren oder andere Termine und der rechte Button öffnet einem die Möglichkeit Karteikarten innerhalb der App abzulegen.
 ### Funktionsweise der App
