@@ -6,7 +6,6 @@ In dieser Readme werden folgenden Thema behandelt:
 
 - > Das Team hinter der App
 - > Aufbau der App
-- > Funktionsweise der App
   
 ### Das Team
   
@@ -21,4 +20,3 @@ In dieser Readme werden folgenden Thema behandelt:
   Sobald sich erfolgreich angemeldet wurde, findet man auf dem Startbildschirm generelle Informationen zu der App. Zu diesen Informationen zählen, beispielsweise, die Version der App, ein Changelog und wichtige Links.
   
   Im Unteren bereich der Ap lassen sich drei Buttons finden. Der linke Button führt den Benutzer zu den aktuellen Hausaufgaben, die Mitte zeigt alle aktuell anstehenden Klausuren oder andere Termine und der rechte Button öffnet einem die Möglichkeit Karteikarten innerhalb der App abzulegen.
-### Funktionsweise der App
